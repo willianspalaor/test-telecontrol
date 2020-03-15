@@ -210,6 +210,10 @@ input.form-control {
     border-color: #0000004d !important;
 }
 
+select.form-control {
+    border-color: #0000004d !important;
+}
+
 .modal .modal-content {
     border-radius: 3px;
 }
@@ -225,7 +229,6 @@ input.form-control {
     border-radius: 2px;
     box-shadow: none;
     border-color: #dddddd;
-    padding: 3px;
 }
 .modal textarea.form-control {
     resize: vertical;
@@ -241,4 +244,12 @@ input.form-control {
 }
 .modal form label {
     font-weight: normal;
+}
+
+select[disabled] {
+    background: #dddddd !important;
+}
+
+input:disabled {
+    background: #dddddd;
 }

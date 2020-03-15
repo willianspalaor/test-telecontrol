@@ -1,0 +1,54 @@
+<!-- Add Modal HTML -->
+<div id="modal-create" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="item/create" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Item</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" name="nome" required>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="number" class="form-control" name="quantidade" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 no-padding">
+                            <div class="form-group">
+                                <label for="unidade">Unidade</label>
+                                <select class="form-control" name="unidade">
+                                    <option></option>
+                                    <option value="Unidades">Unidades</option>
+                                    <option value="Metros">Metros</option>
+                                    <option value="Centímetros">Centímetros</option>
+                                    <option values="Quilogrmas">Quilogramas</option>
+                                    <option value="Gramas">Gramas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="form-group">
+                                <label for="descricao">Descrição</label>
+                                <input type="text" class="form-control" name="descricao" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

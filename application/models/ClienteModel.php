@@ -2,12 +2,12 @@
 
 include_once BASE_PATH . '/Model.php';
 
-class FornecedorModel extends Model
+class ClienteModel extends Model
 {
 
     public function getAll()
     {
-        $stmt = $this->connection->prepare("SELECT * FROM fornecedor");
+        $stmt = $this->connection->prepare("SELECT * FROM cliente");
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -16,8 +16,8 @@ class FornecedorModel extends Model
     {
         try {
 
-            $stmt = $this->connection->prepare('SELECT * from fornecedor where id_fornecedor = :id_fornecedor');
-            $stmt->bindValue(':id_fornecedor', (int)$id);
+            $stmt = $this->connection->prepare('SELECT * from cliente where id_cliente = :id_cliente');
+            $stmt->bindValue(':id_cliente', (int)$id);
             $stmt->execute();
             return $stmt->fetch();
         }
@@ -34,19 +34,21 @@ class FornecedorModel extends Model
 
         try {
 
-            $sql = "INSERT INTO fornecedor 
-                    (nome_fantasia, razao_social, cnpj, endereco_rua, endereco_numero, endereco_bairro) VALUES
-                    (:nome_fantasia, :razao_social, :cnpj, :endereco_rua, :endereco_numero, :endereco_bairro)";
+            $sql = "INSERT INTO cliente 
+                    (nome, telefone, cpf_cnpj, endereco_rua, endereco_numero, endereco_bairro, endereco_estado, endereco_cidade) VALUES
+                    (:nome, :telefone, :cpf_cnpj, :endereco_rua, :endereco_numero, :endereco_bairro, :endereco_estado, :endereco_cidade)";
 
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute(array(
-                ':nome_fantasia' => $data['nomeFantasia'],
-                ':razao_social' => $data['razaoSocial'],
-                ':cnpj' => $data['cnpj'],
+                ':nome' => $data['nome'],
+                ':telefone' => $data['telefone'],
+                ':cpf_cnpj' => $data['cpfCnpj'],
                 ':endereco_rua' => $data['enderecoRua'],
                 ':endereco_numero' => (int)$data['enderecoNumero'],
-                ':endereco_bairro' => $data['enderecoBairro']
+                ':endereco_bairro' => $data['enderecoBairro'],
+                ':endereco_estado' => $data['enderecoEstado'],
+                ':endereco_cidade' => $data['enderecoCidade']
             ));
 
             $this->connection->commit();
@@ -64,24 +66,29 @@ class FornecedorModel extends Model
 
         try {
 
-            $sql = 'UPDATE fornecedor SET 
-                      nome_fantasia = :nome_fantasia, 
-                      razao_social = :razao_social, 
-                      cnpj = :cnpj, 
+            $sql = 'UPDATE cliente SET 
+                      nome = :nome, 
+                      telefone = :telefone, 
+                      cpf_cnpj = :cpf_cnpj, 
                       endereco_rua  = :endereco_rua, 
                       endereco_numero = :endereco_numero, 
-                      endereco_bairro = :endereco_bairro
-				WHERE id_fornecedor = :id_fornecedor';
+                      endereco_bairro = :endereco_bairro,
+                      endereco_estado = :endereco_estado,
+                      endereco_cidade = :endereco_cidade
+				WHERE id_cliente = :id_cliente';
 
             $stmt = $this->connection->prepare($sql);
+
             $stmt->execute(array(
-                ':nome_fantasia' => $data['nomeFantasia'],
-                ':razao_social' => $data['razaoSocial'],
-                ':cnpj' => $data['cnpj'],
+                ':nome' => $data['nome'],
+                ':telefone' => $data['telefone'],
+                ':cpf_cnpj' => $data['cpfCnpj'],
                 ':endereco_rua' => $data['enderecoRua'],
                 ':endereco_numero' => (int)$data['enderecoNumero'],
                 ':endereco_bairro' => $data['enderecoBairro'],
-                ':id_fornecedor' => $data['idFornecedor'],
+                ':endereco_estado' => $data['enderecoEstado'],
+                ':endereco_cidade' => $data['enderecoCidade'],
+                ':id_cliente' => $data['idCliente']
             ));
 
             $this->connection->commit();
@@ -99,8 +106,8 @@ class FornecedorModel extends Model
         try {
 
             foreach($id as $i){
-                $stmt = $this->connection->prepare("DELETE FROM fornecedor WHERE id_fornecedor = :id_fornecedor");
-                $stmt->bindValue(':id_fornecedor', (int)$i);
+                $stmt = $this->connection->prepare("DELETE FROM cliente WHERE id_cliente = :id_cliente");
+                $stmt->bindValue(':id_cliente', (int)$i);
                 $stmt->execute();
             }
 

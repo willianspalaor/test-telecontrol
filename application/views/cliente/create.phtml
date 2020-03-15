@@ -1,0 +1,79 @@
+<!-- Add Modal HTML -->
+<div id="modal-create" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="cliente/create" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Cliente</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" name="nome" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control celular" name="telefone" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="cpfCnpj">CPF/CNPJ</label>
+                                <input type="text" class="form-control" name="cpfCnpj" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 col-xs-7 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoRua">Endereço</label>
+                                <input type="text" class="form-control" name="enderecoRua" required>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-5 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoBairro">Bairro</label>
+                                <input type="text" class="form-control" name="enderecoBairro" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoNumero">Número</label>
+                                <input type="number" class="form-control" name="enderecoNumero" required>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoEstado">Estado</label>
+                                <select class="form-control select-estado" name="enderecoEstado">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xs-8 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoCidade">Cidade</label>
+                                <select class="form-control select-cidade" name="enderecoCidade" disabled>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c133c15-c991-42de-b9c9-a488fc9c4a93" name="Default Changelist" comment="" />
+    <list default="true" id="2c133c15-c991-42de-b9c9-a488fc9c4a93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/FornecedorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/FornecedorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/FornecedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/FornecedorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/create.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/create.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/update.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/update.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,10 +46,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpTemplates">
     <option name="NEW_PHP_FILE_LAST_EXTENSION" value="phtml" />
   </component>
   <component name="ProjectId" id="1Z80yt9dDZSKjB5pnh8uvfVrFDQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -48,21 +63,24 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/cliente" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\project2\public\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\project2\application\views" />
       <recent name="C:\xampp\htdocs\project2\application" />
       <recent name="C:\xampp\htdocs\project2" />
       <recent name="C:\xampp\htdocs\project2\application\library" />
       <recent name="C:\xampp\htdocs\project2\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\project2\application\views\cliente" />
+      <recent name="C:\xampp\htdocs\project2\application\views\item" />
+      <recent name="C:\xampp\htdocs\project2\public\js" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -77,6 +95,8 @@
       <updated>1584205671120</updated>
       <workItem from="1584205672311" duration="15422000" />
       <workItem from="1584221873543" duration="23769000" />
+      <workItem from="1584248677006" duration="59000" />
+      <workItem from="1584285759030" duration="9941000" />
     </task>
     <servers />
   </component>
@@ -92,10 +112,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584225321411" />
-    <state x="579" y="244" key="NewPhpClassDialog" timestamp="1584222954622">
+    <state x="579" y="244" key="NewPhpClassDialog" timestamp="1584288929350">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="579" y="244" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1584222954622" />
+    <state x="579" y="244" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1584288929350" />
     <state x="634" y="353" key="NewPhpFileDialog" timestamp="1584238101112">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -104,9 +124,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584225498099" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584221873833">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584285809083">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584221873833" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584285809083" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1584289794317">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1584289794317" />
   </component>
 </project>

@@ -1,0 +1,70 @@
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Clientes</h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#modal-create" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar</span></a>
+                    <a class="btn btn-danger"  id="btn-delete-clientes"><i class="material-icons">&#xE15C;</i> <span>Remover</span></a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>
+                    <span class="custom-checkbox">
+                        <input type="checkbox" id="selectAll">
+                        <label for="selectAll"></label>
+                    </span>
+                </th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>CPF/CNPJ</th>
+                <th>Cidade</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($this->clientes as $cliente) : ?>
+
+                <tr data-id="<?php echo $cliente['id_cliente']; ?>">
+                    <td>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" name="options[]" value="<?php echo $cliente['id_cliente']; ?>">
+                            <label for="checkbox1"></label>
+                        </span>
+                    </td>
+                    <td><?php echo $cliente['nome'] ?></td>
+                    <td><?php echo $cliente['telefone'] ?></td>
+                    <td><?php echo $cliente['cpf_cnpj'] ?></td>
+                    <td><?php echo $cliente['endereco_cidade'] . '/' . $cliente['endereco_estado'] ?></td>
+                    <td><?php echo $cliente['endereco_rua'] . ', ' .  $cliente['endereco_numero'] ?></td>
+                    <td><?php echo $cliente['endereco_bairro'] ?></td>
+                    <td>
+                        <a class="edit update-cliente">
+                            <i class="material-icons" data-toggle="tooltip" title="Editar Registro">&#xE254;</i>
+                        </a>
+                        <a class="delete delete-cliente">
+                            <i class="material-icons" data-toggle="tooltip" title="Deletar Registro">&#xE872;</i>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<?php include 'create.phtml';?>
+<?php include 'update.phtml';?>
+<?php include 'delete.phtml';?>
+
+<script type="text/javascript" src="/application/views/cliente/cliente.js"></script>
+
+
+

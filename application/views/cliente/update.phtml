@@ -2,40 +2,48 @@
 <div id="modal-update" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="fornecedor/update" method="POST">
+            <form action="cliente/update" method="POST">
                 <div class="modal-header">
-                    <h4 class="modal-title">Adicionar Fornecedor</h4>
+                    <h4 class="modal-title">Editar Cliente</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <input type="hidden" class="form-control" name="idFornecedor">
-                        <div class="col-md-7 col-xs-7 no-padding">
-                            <div class="form-group">
-                                <label for="nomeFantasia">Nome Fantasia</label>
-                                <input type="text" class="form-control" name="nomeFantasia" required>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-5 no-padding">
-                            <div class="form-group">
-                                <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control cnpj" name="cnpj" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
+                        <input type="hidden" class="form-control" name="idCliente" required>
                         <div class="col-md-12 col-xs-12 no-padding">
                             <div class="form-group">
-                                <label for="razaoSocial">Razão Social</label>
-                                <input type="text" class="form-control" name="razaoSocial" required>
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" name="nome" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xs-6 no-padding">
                             <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control celular" name="telefone" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="cpfCnpj">CPF/CNPJ</label>
+                                <input type="text" class="form-control" name="cpfCnpj" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="form-group">
                                 <label for="enderecoRua">Endereço</label>
                                 <input type="text" class="form-control" name="enderecoRua" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoCidade">Cidade</label>
+                                <input type="text" class="form-control" name="enderecoCidade" required>
                             </div>
                         </div>
                         <div class="col-md-2 col-xs-2 no-padding">
@@ -44,7 +52,7 @@
                                 <input type="number" class="form-control" name="enderecoNumero" required>
                             </div>
                         </div>
-                        <div class="col-md-4 col-xs-4 no-padding">
+                        <div class="col-md-5 col-xs-5 no-padding">
                             <div class="form-group">
                                 <label for="enderecoBairro">Bairro</label>
                                 <input type="text" class="form-control" name="enderecoBairro" required>
