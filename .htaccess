@@ -1,0 +1,14 @@
+# O valor "on" indica que o apache deve usar redirecionamento
+RewriteEngine on
+
+# se o arquivo existir na estrutura de arquivos, usar ele e não redirecionar
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# se o diretório existir na estrutura de arquivos, usar ele e não redirecionar
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Os arquivos que não existirem serão redirecionados para o arquivo index.php.
+# o parametro "r" no query string, será o parâmetro a ser processado na classe de Roteamento.
+# L = Last Rule ( Ultima regra )
+# QSA = Query String Append ( Query String Anexada )
+RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]

@@ -1,0 +1,21 @@
+<!-- Delete Modal HTML -->
+<div id="modal-delete" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="fornecedor/delete" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Remover Fornecedor</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Você tem certeza que deseja excluir os registros selecionados?</p>
+                    <p class="text-warning"><small>Essa ação não pode ser desfeita.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger btn-delete" value="Remover">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

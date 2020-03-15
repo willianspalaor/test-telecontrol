@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Teste de Programação Telecontrol</title>
+
+    <link rel="shortcut icon" href="https://www.telecontrol.com.br/images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/simple-sidebar.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/custom.js"></script>
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Menu </div>
+        <div class="list-group list-group-flush">
+            <a href="/" class="list-group-item list-group-item-action bg-light">Início</a>
+            <a href="/fornecedor" class="list-group-item list-group-item-action bg-light">Fornecedores</a>
+            <a href="/ferramentas" class="list-group-item list-group-item-action bg-light">Ferramentas</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        </div>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid layout">
+            <!-- inclui a view do controller e de sua respectiva ação !-->
+            <?php include_once $this->view; ?>
+        </div>
+    </div>
+</div>
+</body>
+</html>
