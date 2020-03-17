@@ -12,3 +12,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # L = Last Rule ( Ultima regra )
 # QSA = Query String Append ( Query String Anexada )
 RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]
+Header set Access-Control-Allow-Origin "*"

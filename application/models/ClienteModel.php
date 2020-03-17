@@ -12,12 +12,12 @@ class ClienteModel extends Model
         return $stmt->fetchAll();
     }
 
-    public function getOne($id)
+    public function getOne($field, $id)
     {
         try {
 
-            $stmt = $this->connection->prepare('SELECT * from cliente where id_cliente = :id_cliente');
-            $stmt->bindValue(':id_cliente', (int)$id);
+            $stmt = $this->connection->prepare('SELECT * from cliente where ' . $field . ' = ' . ':' . $field);
+            $stmt->bindValue(':' . $field, (int)$id);
             $stmt->execute();
             return $stmt->fetch();
         }
@@ -35,15 +35,15 @@ class ClienteModel extends Model
         try {
 
             $sql = "INSERT INTO cliente 
-                    (nome, telefone, cpf_cnpj, endereco_rua, endereco_numero, endereco_bairro, endereco_estado, endereco_cidade) VALUES
-                    (:nome, :telefone, :cpf_cnpj, :endereco_rua, :endereco_numero, :endereco_bairro, :endereco_estado, :endereco_cidade)";
+                    (nome_cliente, telefone_cliente, cpfcnpj_cliente, endereco_rua, endereco_numero, endereco_bairro, endereco_estado, endereco_cidade) VALUES
+                    (:nome_cliente, :telefone_cliente, :cpfcnpj_cliente, :endereco_rua, :endereco_numero, :endereco_bairro, :endereco_estado, :endereco_cidade)";
 
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute(array(
-                ':nome' => $data['nome'],
-                ':telefone' => $data['telefone'],
-                ':cpf_cnpj' => $data['cpfCnpj'],
+                ':nome_cliente' => $data['nomeCliente'],
+                ':telefone_cliente' => $data['telefoneCliente'],
+                ':cpfcnpj_cliente' => $data['cpfCnpjCliente'],
                 ':endereco_rua' => $data['enderecoRua'],
                 ':endereco_numero' => (int)$data['enderecoNumero'],
                 ':endereco_bairro' => $data['enderecoBairro'],
@@ -51,7 +51,10 @@ class ClienteModel extends Model
                 ':endereco_cidade' => $data['enderecoCidade']
             ));
 
+
+            $lastId = $this->connection->lastInsertId();
             $this->connection->commit();
+            return $lastId;
 
         } catch (Exception $e) {
             print($e->getMessage());
@@ -67,9 +70,9 @@ class ClienteModel extends Model
         try {
 
             $sql = 'UPDATE cliente SET 
-                      nome = :nome, 
-                      telefone = :telefone, 
-                      cpf_cnpj = :cpf_cnpj, 
+                      nome_cliente = :nome_cliente, 
+                      telefone_cliente = :telefone_cliente, 
+                      cpfcnpj_cliente = :cpfcnpj_cliente, 
                       endereco_rua  = :endereco_rua, 
                       endereco_numero = :endereco_numero, 
                       endereco_bairro = :endereco_bairro,
@@ -80,9 +83,9 @@ class ClienteModel extends Model
             $stmt = $this->connection->prepare($sql);
 
             $stmt->execute(array(
-                ':nome' => $data['nome'],
-                ':telefone' => $data['telefone'],
-                ':cpf_cnpj' => $data['cpfCnpj'],
+                ':nome_cliente' => $data['nomeCliente'],
+                ':telefone_cliente' => $data['telefoneCliente'],
+                ':cpfcnpj_cliente' => $data['cpfCnpjCliente'],
                 ':endereco_rua' => $data['enderecoRua'],
                 ':endereco_numero' => (int)$data['enderecoNumero'],
                 ':endereco_bairro' => $data['enderecoBairro'],

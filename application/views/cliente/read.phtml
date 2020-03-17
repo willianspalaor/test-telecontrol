@@ -27,6 +27,7 @@
                 <th>Cidade</th>
                 <th>Endereço</th>
                 <th>Bairro</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -39,9 +40,9 @@
                             <label for="checkbox1"></label>
                         </span>
                     </td>
-                    <td><?php echo $cliente['nome'] ?></td>
-                    <td><?php echo $cliente['telefone'] ?></td>
-                    <td><?php echo $cliente['cpf_cnpj'] ?></td>
+                    <td><?php echo $cliente['nome_cliente'] ?></td>
+                    <td><?php echo $cliente['telefone_cliente'] ?></td>
+                    <td><?php echo $cliente['cpfcnpj_cliente'] ?></td>
                     <td><?php echo $cliente['endereco_cidade'] . '/' . $cliente['endereco_estado'] ?></td>
                     <td><?php echo $cliente['endereco_rua'] . ', ' .  $cliente['endereco_numero'] ?></td>
                     <td><?php echo $cliente['endereco_bairro'] ?></td>

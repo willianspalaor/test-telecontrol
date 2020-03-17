@@ -16,13 +16,33 @@ class ClienteController extends Controller
 
     public function index()
     {
-        $this->setView('cliente/read');
-        $this->loadPage();
+        if($this->authenticate()){
+
+            $this->setLayout('admin-layout');
+            $this->setView('cliente/read');
+            $this->loadPage();
+        }
+
+        header('Location: /autenticacao/');
     }
 
     public function getCliente()
     {
-        $data = $this->model->getOne($_POST['id_cliente']);
+        if(empty($_POST)){
+            die('Nenhum parâmetro passado');
+        }
+
+        if(!empty($_POST['id_cliente'])){
+            $data = $this->model->getOne('id_cliente', $_POST['id_cliente']);
+        }else{
+            $data = $this->model->getOne('cpfcnpj_cliente', $_POST['cpfcnpj_cliente']);
+        }
+
+        die(json_encode($data));
+    }
+
+    public function getClientes(){
+        $data = $this->model->getAll();
         die(json_encode($data));
     }
 

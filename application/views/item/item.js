@@ -1,10 +1,13 @@
 
 $(document).ready(function() {
 
-    $(".update-item").click(function () {
+    let btnUpdateItem = $(".update-item");
+    let btnDeleteItem = $(".delete-item");
+    let btnDeleteItens = $('#btn-delete-itens');
+    let modalUpdate = $('#modal-update');
+    let modalDelete = $('#modal-delete');
 
-        /* Recupera o id da linha <tr> */
-        let id = $(this).parent().parent().data("id");
+    function getItem(id, callback){
 
         $.ajax({
             method: "POST",
@@ -12,39 +15,55 @@ $(document).ready(function() {
             data: 'id_item=' + id,
             dataType: "json",
             success: function (response) {
-                $('#modal-update').modal('show');
-                $('#modal-update').find('input[name="idItem"]').val(response.id_item);
-                $('#modal-update').find('input[name="nome"]').val(response.nome);
-                $('#modal-update').find('input[name="quantidade"]').val(response.quantidade);
-                $('#modal-update').find('select[name="unidade"]').val(response.unidade);
-                $('#modal-update').find('input[name="descricao"]').val(response.descricao);
+               callback(response);
             }
         });
-    });
+    }
 
-    $(".delete-item").click(function () {
+    function deleteItem(id, callback){
+
+        $.ajax({
+            method: "POST",
+            url: "/item/delete",
+            data: 'id_item=' + id,
+            success: function (response) {
+                callback(response);
+            }
+        });
+    }
+
+    /***************************** AÇÕES *****************************/
+
+    btnUpdateItem.click(function () {
 
         /* Recupera o id da linha <tr> */
         let id = $(this).parent().parent().data("id");
 
-        $('#modal-delete').modal('show');
+        getItem(id, function(response){
+            modalUpdate.modal('show');
+            modalUpdate.find('input[name="idItem"]').val(response.id_item);
+            modalUpdate.find('select[name="unidadeItem"]').val(response.unidade_item);
+            modalUpdate.find('input[name="descricaoItem"]').val(response.descricao_item);
+        })
+    });
+
+    btnDeleteItem.click(function () {
+
+        /* Recupera o id da linha <tr> */
+        let id = $(this).parent().parent().data("id");
+
+        modalDelete.modal('show');
         $(".btn-delete").on("click", function (ev) {
 
             ev.preventDefault();
 
-            $.ajax({
-                method: "POST",
-                url: "/item/delete",
-                data: 'id_item=' + id,
-                success: function (response) {
-                    $('#delete-modal').modal('hide');
-                    location.reload();
-                }
+            deleteItem(id, function(response){
+                location.reload();
             });
         });
     });
 
-    $('#btn-delete-itens').click(function () {
+    btnDeleteItens.click(function () {
 
         let checkbox = $('table tbody input[type="checkbox"]');
         let itens = [];
@@ -59,17 +78,11 @@ $(document).ready(function() {
             alert('Nenhum registro selecionado.');
         } else {
 
-            $('#modal-delete').modal('show');
+            modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
-                $.ajax({
-                    method: "POST",
-                    url: "/item/delete",
-                    data: 'id_item=' + itens,
-                    success: function (response) {
-                        $('#delete-modal').modal('hide');
-                        location.reload();
-                    }
-                });
+                deleteItem(itens, function(response){
+                    location.reload();
+                })
             });
         }
     });

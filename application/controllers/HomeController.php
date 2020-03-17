@@ -5,9 +5,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        session_start();
-        $this->setView('home/index');
-        $this->loadPage();
+        if($this->authenticate()){
+
+            $this->setLayout('admin-layout');
+            $this->setView('home/index');
+            $this->loadPage();
+            exit;
+        }
+
+        header('Location: /autenticacao/index');
     }
 
 }

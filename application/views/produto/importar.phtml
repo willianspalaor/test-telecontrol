@@ -1,0 +1,24 @@
+<!-- Add Modal HTML -->
+<div id="modal-importar" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="produto/import" method="POST" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Item</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="fileImport" name="fileImport" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" >
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

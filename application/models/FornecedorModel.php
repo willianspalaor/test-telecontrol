@@ -49,7 +49,9 @@ class FornecedorModel extends Model
                 ':endereco_bairro' => $data['enderecoBairro']
             ));
 
+            $lastId = $this->connection->lastInsertId();
             $this->connection->commit();
+            return $lastId;
 
         } catch (Exception $e) {
             print($e->getMessage());

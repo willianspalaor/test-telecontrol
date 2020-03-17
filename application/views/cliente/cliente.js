@@ -1,50 +1,40 @@
 
 $(document).ready(function() {
 
+    let btnUpdateCliente = $(".update-cliente");
+    let btnDeleteCliente = $(".delete-cliente");
+    let btnDeleteClientes = $('#btn-delete-clientes');
+    let modalUpdate = $('#modal-update');
+    let modalDelete = $('#modal-delete');
     let selectEstado = $('.select-estado');
     let selectCidade = $('.select-cidade');
+    let cidade = '';
 
-    $.ajax({
-        method: "GET",
-        url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
-        dataType: "json",
-        success: function (response) {
-            $.each(response, function (key, estado) {
+    function getEstados(callback){
 
-                let option =
-                selectEstado.append($('<option></option>').attr('value', estado.sigla).text(estado.sigla).data('id', estado.id));
-            });
-        }
-    });
+        $.ajax({
+            method: "GET",
+            url: "http://servicodados.ibge.gov.br/api/v1/localidades/estados",
+            dataType: "json",
+            success: function (response) {
+                callback(response);
+            }
+        });
+    }
 
-    selectEstado.on('change', function(){
+    function getMunicipios(id, callback){
 
-        let estado = $(this).children("option:selected");
+        $.ajax({
+            method: "GET",
+            url: "http://servicodados.ibge.gov.br/api/v1/localidades/estados/" + id +"/municipios",
+            dataType: "json",
+            success: function (response) {
+                callback(response);
+            }
+        });
+    }
 
-        selectCidade.text('');
-        selectCidade.append($('<option></option>').attr('value', '').text(''));
-
-        if(estado.val() === ''){
-            selectCidade.prop("disabled", true);
-        }else{
-            $.ajax({
-                method: "GET",
-                url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + estado.data('id') +"/municipios",
-                dataType: "json",
-                success: function (response) {
-                    $.each(response, function (key, estado) {
-                        selectCidade.append($('<option></option>').attr('value', estado.nome).text(estado.nome));
-                    });
-                    selectCidade.prop("disabled", false);
-                }
-            });
-        }
-    });
-
-    $(".update-cliente").click(function () {
-
-        /* Recupera o id da linha <tr> */
-        let id = $(this).parent().parent().data("id");
+    function getClient(id, callback){
 
         $.ajax({
             method: "POST",
@@ -52,42 +42,69 @@ $(document).ready(function() {
             data: 'id_cliente=' + id,
             dataType: "json",
             success: function (response) {
-                $('#modal-update').modal('show');
-                $('#modal-update').find('input[name="idCliente"]').val(response.id_cliente);
-                $('#modal-update').find('input[name="nome"]').val(response.nome);
-                $('#modal-update').find('input[name="telefone"]').val(response.telefone);
-                $('#modal-update').find('input[name="cpfCnpj"]').val(response.cpf_cnpj);
-                $('#modal-update').find('input[name="enderecoRua"]').val(response.endereco_cidade);
-                $('#modal-update').find('input[name="enderecoRua"]').val(response.endereco_rua);
-                $('#modal-update').find('input[name="enderecoNumero"]').val(response.endereco_numero);
-                $('#modal-update').find('input[name="enderecoBairro"]').val(response.endereco_bairro);
+                callback(response)
             }
+        });
+    }
+
+    function deleteClient(id, callback){
+
+        $.ajax({
+            method: "POST",
+            url: "/cliente/delete",
+            data: 'id_cliente=' + id,
+            success: function (response) {
+                callback(response);
+            }
+        });
+    }
+
+    /***************************** AÇÕES *****************************/
+
+    getEstados(function(response){
+        $.each(response, function (key, estado) {
+            selectEstado.append($('<option></option>').attr('value', estado.sigla).text(estado.sigla).data('id', estado.id));
         });
     });
 
-    $(".delete-cliente").click(function () {
+    btnUpdateCliente.click(function () {
 
         /* Recupera o id da linha <tr> */
         let id = $(this).parent().parent().data("id");
 
-        $('#modal-delete').modal('show');
+        getClient(id, function(response){
+
+            modalUpdate.modal('show');
+            modalUpdate.find('input[name="idCliente"]').val(response.id_cliente);
+            modalUpdate.find('input[name="nomeCliente"]').val(response.nome_cliente);
+            modalUpdate.find('input[name="telefoneCliente"]').val(response.telefone_cliente);
+            modalUpdate.find('input[name="cpfCnpjCliente"]').val(response.cpfcnpj_cliente);
+            modalUpdate.find('select[name="enderecoEstado"]').val(response.endereco_estado);
+            modalUpdate.find('input[name="enderecoRua"]').val(response.endereco_rua);
+            modalUpdate.find('input[name="enderecoNumero"]').val(response.endereco_numero);
+            modalUpdate.find('input[name="enderecoBairro"]').val(response.endereco_bairro);
+            cidade = response.endereco_cidade;
+            selectEstado.trigger( "change" );
+        });
+    });
+
+    btnDeleteCliente.click(function () {
+
+        /* Recupera o id da linha <tr> */
+        let id = $(this).parent().parent().data("id");
+
+        modalDelete.modal('show');
         $(".btn-delete").on("click", function (ev) {
 
             ev.preventDefault();
 
-            $.ajax({
-                method: "POST",
-                url: "/cliente/delete",
-                data: 'id_cliente=' + id,
-                success: function (response) {
-                    $('#delete-modal').modal('hide');
-                    location.reload();
-                }
+            deleteClient(id, function(response){
+                location.reload();
             });
         });
     });
 
-    $('#btn-delete-clientes').click(function () {
+    btnDeleteClientes.click(function () {
 
         let checkbox = $('table tbody input[type="checkbox"]');
         let clientes = [];
@@ -102,17 +119,38 @@ $(document).ready(function() {
             alert('Nenhum registro selecionado.');
         } else {
 
-            $('#modal-delete').modal('show');
+            modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
-                $.ajax({
-                    method: "POST",
-                    url: "/cliente/delete",
-                    data: 'id_cliente=' + clientes,
-                    success: function (response) {
-                        $('#delete-modal').modal('hide');
-                        location.reload();
-                    }
+
+                ev.preventDefault();
+
+                deleteClient(clientes, function(response){
+                    location.reload();
                 });
+            });
+        }
+    });
+
+    selectEstado.on('change', function(){
+
+        let option = $(this).children("option:selected");
+        selectCidade.text('');
+        selectCidade.append($('<option></option>').attr('value', '').text(''));
+
+        if(option.val() === ''){
+            selectCidade.prop("disabled", true);
+        }else{
+            getMunicipios(option.data('id'), function(response){
+
+                $.each(response, function (key, estado) {
+                    selectCidade.append($('<option></option>').attr('value', estado.nome).text(estado.nome));
+                });
+                selectCidade.prop("disabled", false);
+
+                if(cidade !== ''){
+                    selectCidade.val(cidade);
+                    cidade = '';
+                }
             });
         }
     });

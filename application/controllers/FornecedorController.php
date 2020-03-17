@@ -16,13 +16,24 @@ class FornecedorController extends Controller
 
     public function index()
     {
-        $this->setView('fornecedor/read');
-        $this->loadPage();
+        if($this->authenticate()){
+
+            $this->setLayout('admin-layout');
+            $this->setView('fornecedor/read');
+            $this->loadPage();
+        }
+
+        header('Location: /autenticacao/index');
     }
 
     public function getFornecedor()
     {
         $data = $this->model->getOne($_POST['id_fornecedor']);
+        die(json_encode($data));
+    }
+
+    public function getFornecedores(){
+        $data = $this->model->getAll();
         die(json_encode($data));
     }
 

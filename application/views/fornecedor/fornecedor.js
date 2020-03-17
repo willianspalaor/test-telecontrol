@@ -1,10 +1,13 @@
 
 $(document).ready(function() {
 
-    $(".update-fornecedor").click(function () {
+    let btnUpdateFornecedor = $(".update-fornecedor");
+    let btnDeleteFornecedor = $(".delete-fornecedor");
+    let btnDeleteFornecedores = $('#btn-delete-fornecedores');
+    let modalUpdate = $('#modal-update');
+    let modalDelete = $('#modal-delete');
 
-        /* Recupera o id da linha <tr> */
-        let id = $(this).parent().parent().data("id");
+    function getFornecedor(id, callback){
 
         $.ajax({
             method: "POST",
@@ -12,41 +15,59 @@ $(document).ready(function() {
             data: 'id_fornecedor=' + id,
             dataType: "json",
             success: function (response) {
-                $('#modal-update').modal('show');
-                $('#modal-update').find('input[name="idFornecedor"]').val(response.id_fornecedor);
-                $('#modal-update').find('input[name="nomeFantasia"]').val(response.nome_fantasia);
-                $('#modal-update').find('input[name="razaoSocial"]').val(response.razao_social);
-                $('#modal-update').find('input[name="cnpj"]').val(response.cnpj);
-                $('#modal-update').find('input[name="enderecoRua"]').val(response.endereco_rua);
-                $('#modal-update').find('input[name="enderecoNumero"]').val(response.endereco_numero);
-                $('#modal-update').find('input[name="enderecoBairro"]').val(response.endereco_bairro);
+                callback(response);
             }
         });
-    });
+    }
 
-    $(".delete-fornecedor").click(function () {
+    function deleteFornecedor(id, callback){
+
+        $.ajax({
+            method: "POST",
+            url: "/fornecedor/delete",
+            data: 'id_fornecedor=' + id,
+            success: function (response) {
+                callback(response);
+            }
+        });
+    }
+
+    /***************************** AÇÕES *****************************/
+    btnUpdateFornecedor.click(function () {
 
         /* Recupera o id da linha <tr> */
         let id = $(this).parent().parent().data("id");
 
-        $('#modal-delete').modal('show');
+        getFornecedor(id, function(response){
+
+            modalUpdate.modal('show');
+            modalUpdate.find('input[name="idFornecedor"]').val(response.id_fornecedor);
+            modalUpdate.find('input[name="nomeFantasia"]').val(response.nome_fantasia);
+            modalUpdate.find('input[name="razaoSocial"]').val(response.razao_social);
+            modalUpdate.find('input[name="cnpj"]').val(response.cnpj);
+            modalUpdate.find('input[name="enderecoRua"]').val(response.endereco_rua);
+            modalUpdate.find('input[name="enderecoNumero"]').val(response.endereco_numero);
+            modalUpdate.find('input[name="enderecoBairro"]').val(response.endereco_bairro);
+        });
+    });
+
+    btnDeleteFornecedor.click(function () {
+
+        /* Recupera o id da linha <tr> */
+        let id = $(this).parent().parent().data("id");
+
+        modalDelete.modal('show');
         $(".btn-delete").on("click", function (ev) {
 
             ev.preventDefault();
 
-            $.ajax({
-                method: "POST",
-                url: "/fornecedor/delete",
-                data: 'id_fornecedor=' + id,
-                success: function (response) {
-                    $('#delete-modal').modal('hide');
-                    location.reload();
-                }
+            deleteFornecedor(id, function(response){
+                location.reload();
             });
         });
     });
 
-    $('#btn-delete-fornecedores').click(function () {
+    btnDeleteFornecedores.click(function () {
 
         let checkbox = $('table tbody input[type="checkbox"]');
         let fornecedores = [];
@@ -61,16 +82,10 @@ $(document).ready(function() {
             alert('Nenhum registro selecionado.');
         } else {
 
-            $('#modal-delete').modal('show');
+            modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
-                $.ajax({
-                    method: "POST",
-                    url: "/fornecedor/delete",
-                    data: 'id_fornecedor=' + fornecedores,
-                    success: function (response) {
-                        $('#delete-modal').modal('hide');
-                        location.reload();
-                    }
+               deleteFornecedor(fornecedores, function(response){
+                    location.reload();
                 });
             });
         }

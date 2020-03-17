@@ -1,0 +1,41 @@
+<!-- Add Modal HTML -->
+<div id="modal-create" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="servico/create" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Serviço</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 col-xs-8 no-padding">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" name="nome" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 no-padding">
+                            <div class="form-group">
+                                <label for="valor">Valor</label>
+                                <input type="text" class="form-control valor-servico" name="valor" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="form-group">
+                                <label for="descricao">Descrição</label>
+                                <input type="text" class="form-control" name="descricao">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

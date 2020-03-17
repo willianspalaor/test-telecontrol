@@ -1,0 +1,149 @@
+
+<!-- Add Modal HTML -->
+<div id="modal-create" class="modal fade">
+    <div class="modal-dialog ordem-servico">
+        <div class="modal-content">
+            <form action="ordemServico/create" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Ordem de Serviço</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 modal-separator">
+                            <span>Cliente</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <input type="hidden" class="form-control" name="idCliente">
+                            <div class="form-group">
+                                <label for="cpfCnpjCliente">CPF/CNPJ (Apenas Números)</label>
+                                <input type="number" class="form-control" name="cpfCnpjCliente" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="nomeCliente">Nome</label>
+                                <input type="text" class="form-control" name="nomeCliente" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="telefoneCliente">Telefone</label>
+                                <input type="text" class="form-control celular" name="telefoneCliente" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoEstado">Estado</label>
+                                <select class="form-control select-estado" name="enderecoEstado" required>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoCidade">Cidade</label>
+                                <select class="form-control select-cidade" name="enderecoCidade" disabled required>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoRua">Endereço</label>
+                                <input type="text" class="form-control" name="enderecoRua" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoBairro">Bairro</label>
+                                <input type="text" class="form-control" name="enderecoBairro" required>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 no-padding">
+                            <div class="form-group">
+                                <label for="enderecoNumero">Número</label>
+                                <input type="number" class="form-control" name="enderecoNumero" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 modal-separator">
+                            <span>Produto</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <input type="hidden" class="form-control" name="idProduto">
+                            <div class="form-group">
+                                <label for="referenciaProduto">Referência</label>
+                                <input type="text" class="form-control" name="referenciaProduto" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="descricaoProduto">Descrição</label>
+                                <input type="text" class="form-control" name="descricaoProduto" required>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="tensaoProduto">Tensão</label>
+                                <select class="form-control" name="tensaoProduto" required>
+                                    <option></option>
+                                    <option value="110">110V</option>
+                                    <option value="220">220V</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="garantiaProduto">Garantia em Meses</label>
+                                <input type="number" class="form-control" name="garantiaProduto" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 modal-separator">
+                            <span>Ordem de Serviço</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 no-padding">
+                            <div class="form-group">
+                                <label for="notaFiscal">Nota fiscal</label>
+                                <input type="number" class="form-control" name="notaFiscal" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="dataCompra">Data da Compra do Produto</label>
+                                <input type="date" class="form-control" name="dataCompra" required>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="statusGarantia">Garantia</label>
+                                <input type="text" class="form-control disable" name="statusGarantia" value="Não" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="dataEmissao">Data da Emissão</label>
+                                <input type="date" class="form-control disable" name="dataEmissao" readonly value="<?php echo date('Y-m-d'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

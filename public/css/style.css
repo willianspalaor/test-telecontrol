@@ -48,7 +48,7 @@ body {
     margin-top: 2px;
 }
 table.table tr th, table.table tr td {
-    border-color: #e9e9e9;
+   /* border-color: #e9e9e9;*/
     padding: 12px 15px;
     vertical-align: middle;
 }
@@ -197,6 +197,10 @@ table.table .avatar {
 .modal .modal-dialog {
     max-width: 600px;
 }
+
+.modal .modal-dialog.ordem-servico {
+    max-width: 900px;
+}
 .modal .modal-header, .modal .modal-body, .modal .modal-footer {
     padding: 20px 50px;
 }
@@ -214,9 +218,25 @@ select.form-control {
     border-color: #0000004d !important;
 }
 
+textarea.form-control{
+    border-color: #0000004d !important;
+}
 .modal .modal-content {
     border-radius: 3px;
 }
+
+.modal-separator{
+    background-color: #373865ed;
+    margin: 10px 0 20px 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.modal-separator>span{
+    color: #ffffff;
+    font-size: 15px;
+}
+
 .modal .modal-footer {
     border-color: #37386538;
     border-radius: 0 0 3px 3px;
@@ -250,6 +270,106 @@ select[disabled] {
     background: #dddddd !important;
 }
 
-input:disabled {
-    background: #dddddd;
+input[disabled] {
+    background: #dddddd !important;
 }
+
+.disable{
+    pointer-events:none !important;
+    background:#dddddd !important;
+}
+
+.icon-disable{
+    pointer-events:none !important;
+    cursor: none !important;
+    color:#dddddd !important;
+}
+
+.select-estado{
+    padding: 5px !important;
+}
+
+.wrapper{
+   background: #fff;
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.right{
+    float:right;
+}
+
+.btn-group-actions{
+    text-align: center;
+}
+
+.finalizar-ordem-servico{
+    cursor:pointer;
+}
+
+.finalizar-ordem-servico > i{
+    color: #28a745;
+}
+
+.imprimir-ordem-servico{
+    cursor:pointer;
+}
+
+.imprimir-ordem-servico > i{
+    color: #147cd8;
+}
+
+.add-item{
+    font-size: 20px;
+    padding-top: 37px;
+    padding-left: 10px;
+    color: #28a745;
+    cursor:pointer;
+}
+
+.remove-item{
+    font-size: 20px;
+    padding-top: 37px;
+    padding-left: 10px;
+    color: #dc3545;
+    cursor:pointer;
+}
+
+.color-green{
+    color: #28a745;
+    font-size: 10px !important;
+    padding-right: 5px;
+}
+
+.color-red{
+    color: #dc3545;
+    font-size: 10px !important;
+    padding-right: 5px;
+}
+
+span.filter{
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    padding-top: 5px;
+}
+
+div.row.filter{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+    background-color: #373865 !important;
+}
+
+.login{
+    color: #fff !important;
+}
+
+.login>i{
+    padding-right:10px;
+}
+

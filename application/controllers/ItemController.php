@@ -16,13 +16,24 @@ class ItemController extends Controller
 
     public function index()
     {
-        $this->setView('item/read');
-        $this->loadPage();
+        if($this->authenticate()){
+
+            $this->setLayout('admin-layout');
+            $this->setView('item/read');
+            $this->loadPage();
+        }
+
+        header('Location: /autenticacao/index');
     }
 
     public function getItem()
     {
         $data = $this->model->getOne($_POST['id_item']);
+        die(json_encode($data));
+    }
+
+    public function getItens(){
+        $data = $this->model->getAll();
         die(json_encode($data));
     }
 

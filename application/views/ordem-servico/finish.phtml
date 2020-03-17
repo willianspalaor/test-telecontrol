@@ -1,0 +1,83 @@
+<div id="modal-finish" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="ordemServico/finish" method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Finalizar Ordem de Serviço</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="hidden" class="form-control" name="idOrdemServico" id="idOrdemServico">
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="form-group">
+                                <label for="descricaoProblema">Descrição do Problema</label>
+                                <textarea class="form-control" name="descricaoProblema" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="valorServico">Valor</label>
+                                <select class="form-control" name="valorServico">
+                                    <option></option>
+                                    <?php foreach($this->servicos as $servico) : ?>
+                                        <option value="<?php echo $servico['id_servico'] ?>"><?php echo $servico['valor'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6 no-padding">
+                            <div class="form-group">
+                                <label for="servicoExcedente">Serviço Excedente</label>
+                                <input type="text" class="form-control" name="servicoExcedente" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-3 no-padding">
+                            <div class="form-group">
+                                <label for="valorExcedente">Valor Excedente</label>
+                                <input type="text" class="form-control valor-excedente" name="valorExcedente">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 modal-separator">
+                            <span>Itens</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9 col-xs-9 no-padding">
+                            <div class="form-group">
+                                <label for="itemOrdemServico1">Descrição</label>
+                                <select class="form-control" name="itemOrdemServico1">
+                                    <option></option>
+                                    <?php foreach($this->itens as $item) : ?>
+                                        <option value="<?php echo $item['id_item'] ?>"><?php echo $item['descricao_item'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 no-padding">
+                            <div class="form-group">
+                                <label for="quantidade1">Quantidade</label>
+                                <input type="number" class="form-control" name="quantidade1" required>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-1 no-padding">
+                            <div class="form-group">
+                                <a class="add-novo-item" href="#">
+                                    <i class="fas fa-plus add-item" data-toggle="tooltip" title="Adicionar item"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Finalizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

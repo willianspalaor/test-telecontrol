@@ -34,18 +34,18 @@ class ItemModel extends Model
 
         try {
 
-            $sql = "INSERT INTO item (nome, descricao, quantidade, unidade) VALUES (:nome, :descricao, :quantidade, :unidade)";
+            $sql = "INSERT INTO item (descricao_item, unidade_item) VALUES (:descricao_item, :unidade_item)";
 
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute(array(
-                ':nome' => $data['nome'],
-                ':descricao' => $data['descricao'],
-                ':quantidade' => $data['quantidade'],
-                ':unidade' => $data['unidade']
+                ':descricao_item' => $data['descricaoItem'],
+                ':unidade_item' => $data['unidadeItem']
             ));
 
+            $lastId = $this->connection->lastInsertId();
             $this->connection->commit();
+            return $lastId;
 
         } catch (Exception $e) {
             print($e->getMessage());
@@ -60,14 +60,12 @@ class ItemModel extends Model
 
         try {
 
-            $sql = 'UPDATE item SET nome = :nome, descricao = :descricao, quantidade = :quantidade, unidade = :unidade WHERE id_item = :id_item';
+            $sql = 'UPDATE item SET descricao_item = :descricao_item, unidade_item = :unidade_item WHERE id_item = :id_item';
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute(array(
-                ':nome' => $data['nome'],
-                ':descricao' => $data['descricao'],
-                ':quantidade' => $data['quantidade'],
-                ':unidade' => $data['unidade'],
+                ':descricao_item' => $data['descricaoItem'],
+                ':unidade_item' => $data['unidadeItem'],
                 ':id_item' => $data['idItem']
             ));
 

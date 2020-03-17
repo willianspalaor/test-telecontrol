@@ -374,14 +374,14 @@
                     el.attr('placeholder' , options.placeholder);
                 }
 
-                // this is necessary, otherwise if the user submit the form
+                // this is necessary, otherwise if the autenticacao submit the form
                 // and then press the "back" button, the autocomplete will erase
                 // the data. Works fine on IE9+, FF, Opera, Safari.
                 if (el.data('mask')) {
                   el.attr('autocomplete', 'off');
                 }
 
-                // detect if is necessary let the user type freely.
+                // detect if is necessary let the autenticacao type freely.
                 // for is a lot faster than forEach.
                 for (var i = 0, maxlength = true; i < mask.length; i++) {
                     var translation = jMask.translation[mask.charAt(i)];

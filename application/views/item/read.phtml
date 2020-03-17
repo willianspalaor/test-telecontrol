@@ -21,10 +21,9 @@
                         <label for="selectAll"></label>
                     </span>
                 </th>
-                <th>Nome</th>
                 <th>Descrição</th>
-                <th>Quantidade</th>
-                <th>Unidade</th>
+                <th>Unidade de Medida</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -37,10 +36,8 @@
                             <label for="checkbox1"></label>
                         </span>
                     </td>
-                    <td><?php echo $item['nome'] ?></td>
-                    <td><?php echo $item['descricao'] ?></td>
-                    <td><?php echo $item['quantidade'] ?></td>
-                    <td><?php echo $item['unidade'] ?></td>
+                    <td><?php echo $item['descricao_item'] ?></td>
+                    <td><?php echo $item['unidade_item'] ?></td>
                     <td>
                         <a class="edit update-item">
                             <i class="material-icons" data-toggle="tooltip" title="Editar Registro">&#xE254;</i>

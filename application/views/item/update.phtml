@@ -2,69 +2,30 @@
 <div id="modal-update" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="cliente/update" method="POST">
+            <form action="item/update" method="POST">
                 <div class="modal-header">
-                    <h4 class="modal-title">Editar Cliente</h4>
+                    <h4 class="modal-title">Editar Item</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" class="form-control" name="idItem">
                     <div class="row">
-                        <input type="hidden" class="form-control" name="idCliente" required>
-                        <div class="col-md-12 col-xs-12 no-padding">
-                            <div class="form-group">
-                                <label for="nome">Nome</label>
-                                <input type="text" class="form-control" name="nome" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-xs-6 no-padding">
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control celular" name="telefone" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-6 no-padding">
-                            <div class="form-group">
-                                <label for="cpfCnpj">CPF/CNPJ</label>
-                                <input type="text" class="form-control" name="cpfCnpj" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-7 col-xs-7 no-padding">
-                            <div class="form-group">
-                                <label for="enderecoRua">Endereço</label>
-                                <input type="text" class="form-control" name="enderecoRua" required>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-5 no-padding">
-                            <div class="form-group">
-                                <label for="enderecoBairro">Bairro</label>
-                                <input type="text" class="form-control" name="enderecoBairro" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2 col-xs-2 no-padding">
-                            <div class="form-group">
-                                <label for="enderecoNumero">Número</label>
-                                <input type="number" class="form-control" name="enderecoNumero" required>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-xs-2 no-padding">
-                            <div class="form-group">
-                                <label for="enderecoEstado">Estado</label>
-                                <select class="form-control select-estado" name="enderecoEstado">
-                                    <option></option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="col-md-8 col-xs-8 no-padding">
                             <div class="form-group">
-                                <label for="enderecoCidade">Cidade</label>
-                                <select class="form-control select-cidade" name="enderecoCidade" disabled>
+                                <label for="descricaoItem">Descrição</label>
+                                <input type="text" class="form-control" name="descricaoItem">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-4 no-padding">
+                            <div class="form-group">
+                                <label for="unidadeItem">Unidade de Medida</label>
+                                <select class="form-control" name="unidadeItem" required>
                                     <option></option>
+                                    <option value="Unidades">Unidades</option>
+                                    <option value="Metros">Metros</option>
+                                    <option value="Centímetros">Centímetros</option>
+                                    <option value="Quilogrmas">Quilogramas</option>
+                                    <option value="Gramas">Gramas</option>
                                 </select>
                             </div>
                         </div>
