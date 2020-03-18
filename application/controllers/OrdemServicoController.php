@@ -32,9 +32,9 @@ class OrdemServicoController extends Controller
             $this->setLayout('admin-layout');
             $this->setView('ordem-servico/read');
             $this->loadPage();
+        }else{
+            header('Location: /autenticacao');
         }
-
-        header('Location: /autenticacao/index');
     }
 
     public function getOrdemServico()
@@ -71,18 +71,73 @@ class OrdemServicoController extends Controller
         header('Location: /ordemServico');
     }
 
-    public function imprimir($args){
+    public function report(){
 
-        $odemServico = $this->model->getOne($args[0]);
+        $ordens = $this->model->getAll();
+        $valor = 0;
+        $finalizados = 0;
+        $pendentes = 0;
+
+        foreach($ordens as $ordem){
+
+            if($ordem['status'] === 'Finalizado'){
+                $finalizados++;
+            }else{
+                $pendentes++;
+            }
+            $valor += $ordem['valor_servico'] + $ordem['valor_excedente'];
+        }
+
         header('Content-Type: application/pdf');
 
-        $pdf= new FPDF("P","pt","A4");
+        $pdf = new FPDF();
+        $pdf->SetTitle('Relatorio');
 
         $pdf->AddPage();
-        $pdf->SetFont('arial','B',12);
-        $pdf->Cell(0,5,"Ordem de Servico",0,1,'L');
-        $pdf->Ln(8);
 
+        // Title
+        $pdf->SetFont('Arial','',12);
+        $pdf->SetFillColor(200,220,255);
+        $pdf->Cell(0,6,'Relatorio Ordens de Servico',0,1,'L',true);
+        $pdf->Ln(4);
+
+        // Font
+        $pdf->SetFont('Times','',12);
+
+        $pdf->MultiCell(200,5,'Quantidade de ordens finalizadas: ' . $finalizados);
+        $pdf->MultiCell(200,5,'Valor Total:' . ' R$' . $valor);
+        $pdf->Ln();
+
+        $pdf->MultiCell(200,5,'Quantidade de ordens Pendentes: ' . $pendentes);
+        $pdf->Ln();
+
+        ob_clean();
+        $pdf->Output("Relatorio.pdf","D");
+    }
+
+    public function imprimir($args){
+
+        header('Content-Type: application/pdf; charset=utf-8');
+        $odemServico = $this->model->getOne($args[0]);
+
+        $pdf = new FPDF();
+        $pdf->SetTitle('Relatorio');
+
+        $pdf->AddPage();
+
+        // Title
+        $pdf->SetFont('Arial','',12);
+        $pdf->SetFillColor(200,220,255);
+        $pdf->Cell(0,6,'Ordem de Servico',0,1,'L',true);
+        $pdf->Ln(4);
+
+        // Font
+        $pdf->SetFont('Times','',12);
+
+        $pdf->MultiCell(200,5,'Esse e um modelo da ordem de servico');
+        $pdf->Ln();
+        // Mention
+        $pdf->SetFont('','I');
 
         ob_clean();
         $pdf->Output("ordem_de_servico_" . $odemServico['nota_fiscal'] . ".pdf","D");

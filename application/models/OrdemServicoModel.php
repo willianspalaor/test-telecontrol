@@ -141,9 +141,9 @@ class OrdemServicoModel extends Model
 
                 $stmt->execute(array(
                     ':descricao_problema' => $data['descricaoProblema'],
-                    ':valor_servico' => $data['valorServico'],
+                    ':valor_servico' => $this->formatFieldFloat($data['valorServico']),
                     ':servico_excedente' => $data['servicoExcedente'],
-                    ':valor_excedente' => $data['valorExcedente'],
+                    ':valor_excedente' => $this->formatFieldFloat($data['valorExcedente']),
                     ':status' => 'Finalizado',
                     ':id_ordem_servico' => $data['idOrdemServico']
                 ));
@@ -203,11 +203,12 @@ class OrdemServicoModel extends Model
                 $this->connection->rollback();
             }
         }
-
     }
 
     public function delete($id)
     {
+        (new OrdemServicoItensModel())->delete($id);
+
         $this->connection->beginTransaction();
 
         try {

@@ -32,6 +32,7 @@ class ServicoModel extends Model
     {
         $this->connection->beginTransaction();
 
+
         try {
 
             $sql = "INSERT INTO servico (nome, descricao, valor) VALUES (:nome, :descricao, :valor)";
@@ -41,7 +42,7 @@ class ServicoModel extends Model
             $stmt->execute(array(
                 ':nome' => $data['nome'],
                 ':descricao' => $data['descricao'],
-                ':valor' => $data['valor']
+                ':valor' => $this->formatFieldFloat($data['valor'])
             ));
 
             $lastId = $this->connection->lastInsertId();
@@ -67,7 +68,7 @@ class ServicoModel extends Model
             $stmt->execute(array(
                 ':nome' => $data['nome'],
                 ':descricao' => $data['descricao'],
-                ':valor' => $data['valor'],
+                ':valor' => $this->formatFieldFloat($data['valor']),
                 ':id_servico' => $data['idServico']
             ));
 

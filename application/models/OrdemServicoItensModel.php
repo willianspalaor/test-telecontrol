@@ -54,4 +54,24 @@ class OrdemServicoItensModel extends Model
         }
     }
 
+    public function delete($id)
+    {
+        $this->connection->beginTransaction();
+
+        try {
+
+            foreach($id as $i){
+                $stmt = $this->connection->prepare("DELETE FROM ordem_servico_itens WHERE id_ordem_servico = :id_ordem_servico");
+                $stmt->bindValue(':id_ordem_servico', (int)$i);
+                $stmt->execute();
+            }
+
+            $this->connection->commit();
+        }
+        catch(Exception $e) {
+            print($e->getMEssage()());
+            $this->connection->rollback();
+        }
+    }
+
 }

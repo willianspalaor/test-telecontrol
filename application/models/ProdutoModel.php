@@ -102,6 +102,8 @@ class ProdutoModel extends Model
             $this->connection->commit();
         }
         catch(Exception $e) {
+
+            var_dump($e->getMessage()); die();
             print($e->getMEssage()());
             $this->connection->rollback();
         }

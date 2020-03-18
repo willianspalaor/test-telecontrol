@@ -21,9 +21,9 @@ class ClienteController extends Controller
             $this->setLayout('admin-layout');
             $this->setView('cliente/read');
             $this->loadPage();
+        }else{
+            header('Location: /autenticacao');
         }
-
-        header('Location: /autenticacao/');
     }
 
     public function getCliente()

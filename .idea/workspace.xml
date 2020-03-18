@@ -2,35 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c133c15-c991-42de-b9c9-a488fc9c4a93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/configs/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/configs/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AutenticacaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AutenticacaoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ClienteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/FornecedorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/FornecedorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/HomeController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ClienteModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ClienteModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/FornecedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/FornecedorModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ItemModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ItemModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cliente/cliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cliente/cliente.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cliente/create.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cliente/create.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cliente/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cliente/read.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cliente/update.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cliente/update.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/create.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/create.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/OrdemServicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/OrdemServicoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ProdutoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ServicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ServicoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/OrdemServicoItensModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/OrdemServicoItensModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/OrdemServicoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/OrdemServicoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ProdutoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ProdutoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ServicoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ServicoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin-layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin-layout.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/read.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/update.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/update.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/home/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/home/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/item/create.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/item/create.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/item/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/item/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/item/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/item/read.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/item/update.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/item/update.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin-layout.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery.mask.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.mask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/home/index.phtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ordem-servico/finish.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ordem-servico/finish.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ordem-servico/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ordem-servico/read.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/produto/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/produto/read.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +59,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpTemplates">
-    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="phtml" />
   </component>
   <component name="ProjectId" id="1Z80yt9dDZSKjB5pnh8uvfVrFDQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -121,7 +110,8 @@
       <workItem from="1584379673782" duration="26737000" />
       <workItem from="1584407869688" duration="907000" />
       <workItem from="1584410053952" duration="2952000" />
-      <workItem from="1584454637827" duration="30777000" />
+      <workItem from="1584454637827" duration="33958000" />
+      <workItem from="1584535056986" duration="12842000" />
     </task>
     <servers />
   </component>
@@ -137,34 +127,34 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584225321411" />
-    <state x="554" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584482601431">
+    <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584487292757">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="554" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584482601431" />
+    <state x="458" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584487292757" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1584478939903">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584478939903" />
-    <state x="579" y="244" key="NewPhpClassDialog" timestamp="1584485772001">
+    <state x="579" y="244" key="NewPhpClassDialog" timestamp="1584543584450">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="579" y="244" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1584485772001" />
-    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1584485784426">
+    <state x="579" y="244" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1584543584450" />
+    <state x="634" y="353" key="NewPhpFileDialog" timestamp="1584535430437">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1584485784426" />
+    <state x="634" y="353" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1584535430437" />
     <state x="301" y="72" key="SettingsEditor" timestamp="1584225498099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584225498099" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584454717710">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584535069066">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584454717710" />
-    <state x="496" y="28" width="607" height="804" key="find.popup" timestamp="1584485445517">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584535069066" />
+    <state x="496" y="28" width="607" height="804" key="find.popup" timestamp="1584545746941">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="28" width="607" height="804" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1584485445517" />
+    <state x="496" y="28" width="607" height="804" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1584545746941" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1584289794317">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

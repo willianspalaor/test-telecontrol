@@ -21,9 +21,9 @@ class ServicoController extends Controller
             $this->setLayout('admin-layout');
             $this->setView('servico/read');
             $this->loadPage();
+        }else{
+            header('Location: /autenticacao');
         }
-
-        header('Location: /autenticacao/index');
     }
 
     public function getServico()

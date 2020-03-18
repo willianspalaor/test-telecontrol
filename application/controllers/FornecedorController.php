@@ -21,9 +21,9 @@ class FornecedorController extends Controller
             $this->setLayout('admin-layout');
             $this->setView('fornecedor/read');
             $this->loadPage();
+        }else{
+            header('Location: /autenticacao');
         }
-
-        header('Location: /autenticacao/index');
     }
 
     public function getFornecedor()

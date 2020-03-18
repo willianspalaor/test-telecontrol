@@ -23,7 +23,7 @@
                                 <select class="form-control" name="valorServico">
                                     <option></option>
                                     <?php foreach($this->servicos as $servico) : ?>
-                                        <option value="<?php echo $servico['id_servico'] ?>"><?php echo $servico['valor'] ?></option>
+                                        <option value="<?php echo $servico['valor'] ?>"><?php echo $servico['valor'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
@@ -50,7 +50,7 @@
                         <div class="col-md-9 col-xs-9 no-padding">
                             <div class="form-group">
                                 <label for="itemOrdemServico1">Descrição</label>
-                                <select class="form-control" name="itemOrdemServico1">
+                                <select class="form-control" name="itemOrdemServico1" required>
                                     <option></option>
                                     <?php foreach($this->itens as $item) : ?>
                                         <option value="<?php echo $item['id_item'] ?>"><?php echo $item['descricao_item'] ?></option>

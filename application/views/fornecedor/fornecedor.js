@@ -84,6 +84,9 @@ $(document).ready(function() {
 
             modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
+
+                ev.preventDefault();
+
                deleteFornecedor(fornecedores, function(response){
                     location.reload();
                 });

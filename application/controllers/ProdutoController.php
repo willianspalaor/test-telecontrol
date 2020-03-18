@@ -1,7 +1,7 @@
 <?php
 
 include_once BASE_PATH . '/models/ProdutoModel.php';
-
+include_once BASE_PATH . '/helpers/vendor/autoload.php';
 
 class ProdutoController extends Controller
 {
@@ -21,9 +21,9 @@ class ProdutoController extends Controller
             $this->setLayout('admin-layout');
             $this->setView('produto/read');
             $this->loadPage();
+        }else{
+            header('Location: /autenticacao');
         }
-
-        header('Location: /autenticacao/index');
     }
 
     public function getProduto()
@@ -66,7 +66,47 @@ class ProdutoController extends Controller
 
     public function import(){
 
-        var_dump($_FILES);
-        var_dump($_POST); die();
+        if(isset($_FILES['fileImport']['tmp_name'])){
+
+            try{
+
+                $tmpName = $_FILES['fileImport']['tmp_name'];
+                $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
+                $reader->setReadDataOnly(TRUE);
+                $spreadsheet = $reader->load($tmpName);
+
+                $worksheet = $spreadsheet->getActiveSheet();
+                // Get the highest row and column numbers referenced in the worksheet
+                $highestRow = $worksheet->getHighestRow(); // e.g. 10
+                $highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
+                $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
+                $rows = array();
+
+                for ($row = 2; $row <= $highestRow; ++$row) {
+                    for ($col = 1; $col <= $highestColumnIndex; ++$col) {
+                        $value = $worksheet->getCellByColumnAndRow($col, $row)->getValue();
+                        if($value !== null){
+                            $rows[$col] = $value;
+                        }
+                    }
+
+                    $data = [
+                        'descricaoProduto' => $rows[1],
+                        'referenciaProduto' => $rows[2],
+                        'garantiaProduto' => $rows[3],
+                        'tensaoProduto' => $rows[4]
+                    ];
+
+                    $this->model->insert($data);
+                }
+
+                header('Location: /produto');
+
+
+            }catch(Exception $e){
+                print $e->getMessage();
+            }
+
+        }
     }
 }

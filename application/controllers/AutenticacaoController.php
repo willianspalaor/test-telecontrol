@@ -7,7 +7,7 @@ class AutenticacaoController extends Controller{
     public function index() {
 
         if($this->authenticate()){
-            header('Location: /home/');
+            header('Location: /ordemServico');
             exit;
         }
 
@@ -32,7 +32,7 @@ class AutenticacaoController extends Controller{
 
         if($user){
             Session::create($params);
-            header('Location: /home');
+            header('Location: /ordemServico');
             exit;
         }
 
