@@ -21,7 +21,7 @@ class Request {
         array_shift($segments);
 
         # Atribui os nomes do arquivo(controller), da ação(método), e armazena os parâmetros(argumentos) em um array.
-        $this->controller = ($controller = array_shift($segments)) ? $controller : "home";
+        $this->controller = ($controller = array_shift($segments)) ? $controller : "ordemServico";
         $this->action     = ($action = array_shift($segments)) ? $action : "index";
         $this->args 	  = (is_array($segments)) ? $segments : array();
 

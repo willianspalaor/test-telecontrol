@@ -3,26 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c133c15-c991-42de-b9c9-a488fc9c4a93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/configs/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/configs/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AutenticacaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AutenticacaoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ClienteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/FornecedorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/FornecedorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/OrdemServicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/OrdemServicoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ProdutoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ServicoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ServicoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/OrdemServicoItensModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/OrdemServicoItensModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/OrdemServicoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/OrdemServicoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ProdutoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ProdutoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ServicoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ServicoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin-layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin-layout.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/fornecedor/fornecedor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/home/index.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ordem-servico/finish.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ordem-servico/finish.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ordem-servico/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ordem-servico/read.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/produto/read.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/produto/read.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/Request.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +92,7 @@
       <workItem from="1584407869688" duration="907000" />
       <workItem from="1584410053952" duration="2952000" />
       <workItem from="1584454637827" duration="33958000" />
-      <workItem from="1584535056986" duration="12842000" />
+      <workItem from="1584535056986" duration="14138000" />
     </task>
     <servers />
   </component>
