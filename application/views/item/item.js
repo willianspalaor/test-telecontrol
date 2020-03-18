@@ -80,6 +80,9 @@ $(document).ready(function() {
 
             modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
+
+                ev.preventDefault();
+
                 deleteItem(itens, function(response){
                     location.reload();
                 })

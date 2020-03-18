@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "GET",
-            url: "http://servicodados.ibge.gov.br/api/v1/localidades/estados",
+            url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
             dataType: "json",
             success: function (response) {
                 callback(response);
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "GET",
-            url: "http://servicodados.ibge.gov.br/api/v1/localidades/estados/" + id +"/municipios",
+            url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + id +"/municipios",
             dataType: "json",
             success: function (response) {
                 callback(response);

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c133c15-c991-42de-b9c9-a488fc9c4a93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/cliente/cliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cliente/cliente.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/item/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/item/item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/ordem-servico/ordemServico.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ordem-servico/ordemServico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/servico/servico.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/servico/servico.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +95,7 @@
       <workItem from="1584407869688" duration="907000" />
       <workItem from="1584410053952" duration="2952000" />
       <workItem from="1584454637827" duration="33958000" />
-      <workItem from="1584535056986" duration="14138000" />
+      <workItem from="1584535056986" duration="14958000" />
     </task>
     <servers />
   </component>
@@ -132,10 +135,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584535069066" />
-    <state x="496" y="28" width="607" height="804" key="find.popup" timestamp="1584545746941">
+    <state x="496" y="28" width="607" height="804" key="find.popup" timestamp="1584549889164">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="28" width="607" height="804" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1584545746941" />
+    <state x="496" y="28" width="607" height="804" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1584549889164" />
     <state x="456" y="195" key="run.anything.popup" timestamp="1584289794317">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

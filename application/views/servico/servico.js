@@ -81,6 +81,9 @@ $(document).ready(function() {
 
             modalDelete.modal('show');
             $(".btn-delete").on("click", function (ev) {
+
+                ev.preventDefault();
+
                 deleteServico(servicos, function(response){
                     location.reload();
                 });
